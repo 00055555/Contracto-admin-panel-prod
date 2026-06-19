@@ -1,0 +1,17 @@
+# Flutter build and tool directories
+.dart_tool/
+build/
+
+# Flutter plugin files
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
