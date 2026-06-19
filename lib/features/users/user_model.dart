@@ -59,10 +59,6 @@ class AdminUser {
   factory AdminUser.fromJson(Map<String, dynamic> json) {
     final userType = json['user_type']?.toString().toLowerCase() ?? 'individual';
     final companyName = json['company_name']?.toString();
-    final isBusiness = userType == 'business' || 
-                      userType == 'company' || 
-                      (companyName != null && companyName.trim().isNotEmpty) ||
-                      json['is_business'] == true;
     
     // Parse credit data from joined business_credit_accounts
     final creditData = json['business_credit_accounts'];
@@ -71,6 +67,14 @@ class AdminUser {
     double? usedCredit;
     String? kycStatus;
     String? creditAccountStatus;
+    
+    final hasCreditAccount = creditData != null && (creditData is! List || creditData.isNotEmpty);
+    
+    final isBusiness = userType == 'business' || 
+                      userType == 'company' || 
+                      (companyName != null && companyName.trim().isNotEmpty) ||
+                      json['is_business'] == true ||
+                      hasCreditAccount;
     
     if (creditData != null) {
       if (creditData is List && creditData.isNotEmpty) {
