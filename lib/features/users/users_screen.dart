@@ -393,6 +393,15 @@ class UsersScreen extends ConsumerWidget {
                                                   fontSize: 11),
                                               overflow: TextOverflow.ellipsis,
                                             ),
+                                          if (user.panNumber != null && user.panNumber!.isNotEmpty)
+                                            Text(
+                                              'PAN: ${user.panNumber}',
+                                              style: const TextStyle(
+                                                  color: Color(0xFF0F766E),
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 11),
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
                                           Text(
                                             '($customerId)',
                                             style: TextStyle(
