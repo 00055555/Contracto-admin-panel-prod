@@ -1,0 +1,18 @@
+# Ignore local build artifacts and IDE folders
+build/
+.dart_tool/
+.vscode/
+.idea/
+.git/
+
+# Ignore mobile and desktop platform folders (not needed for Vercel Web deployment)
+android/
+ios/
+windows/
+linux/
+macos/
+
+# Ignore test and sql migration scripts at root
+*.sql
+*.txt
+*.md
