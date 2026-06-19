@@ -3,6 +3,9 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+# Disable dubious ownership check in Git for container builds
+git config --global --add safe.directory '*'
+
 # Define the Flutter version to use (matching your SDK needs)
 FLUTTER_VERSION="3.41.1"
 
