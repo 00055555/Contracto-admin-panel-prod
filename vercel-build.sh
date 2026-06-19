@@ -4,7 +4,7 @@
 set -e
 
 # Define the Flutter version to use (matching your SDK needs)
-FLUTTER_VERSION="3.19.6"
+FLUTTER_VERSION="3.41.1"
 
 echo "=== Downloading Flutter SDK ($FLUTTER_VERSION) ==="
 curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz
