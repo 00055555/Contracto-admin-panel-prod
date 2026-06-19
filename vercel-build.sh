@@ -25,6 +25,6 @@ echo "=== Enabling Flutter Web ==="
 flutter config --enable-web
 
 echo "=== Building Flutter Web Application ==="
-flutter build web --release
+flutter build web --release --pwa-strategy=none
 
 echo "=== Build Completed Successfully ==="

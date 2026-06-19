@@ -33,6 +33,17 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script>
+    // Force unregister service workers to avoid aggressive caching in production
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+          console.log('Unregistered service worker to bypass cache');
+        }
+      });
+    }
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
